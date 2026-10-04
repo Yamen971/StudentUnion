@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>اتحاد الطلاب</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            color: #111111;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.82),
+                    rgba(255, 255, 255, 0.82)
+                ),
+                url("{{ url_for('static', filename='school.jpg') }}");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+
+        /* الهيدر */
+
+        .header {
+            background: #f5f1e8;
+            padding: 30px 20px;
+            text-align: center;
+
+            border-bottom: 1px solid #ddd6c8;
+        }
+
+
+        .school-icon {
+            width: 95px;
+            height: 95px;
+
+            margin: auto;
+
+            background: white;
+
+            border: 2px solid #222;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 42px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+
+        .header h1 {
+            margin: 18px 0 8px;
+
+            font-size: 32px;
+
+            color: #111111;
+        }
+
+
+        .header p {
+            margin: 0;
+
+            font-size: 17px;
+
+            color: #333333;
+        }
+
+
+        /* الجملة الرئيسية */
+
+        .quote {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 25px auto 0;
+
+            padding: 0 20px;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            line-height: 1.8;
+
+            color: #222222;
+        }
+
+
+        /* محتوى الصفحة */
+
+        .container {
+            width: 92%;
+
+            max-width: 680px;
+
+            margin: 35px auto;
+        }
+
+
+        .card {
+            background: rgba(255, 255, 255, 0.96);
+
+            padding: 32px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.15);
+
+            border: 1px solid #e2e2e2;
+        }
+
+
+        .card h2 {
+            text-align: center;
+
+            margin-top: 0;
+
+            color: #111111;
+
+            font-size: 25px;
+        }
+
+
+        .description {
+            text-align: center;
+
+            color: #555555;
+
+            line-height: 1.8;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* الخانات */
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+
+        label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+            color: #222222;
+        }
+
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #c9c9c9;
+
+            border-radius: 10px;
+
+            background: #fafafa;
+
+            color: #111111;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+
+        input:focus,
+        textarea:focus {
+            border-color: #555555;
+
+            background: white;
+
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+        }
+
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        /* زر الإرسال */
+
+        button {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #111111;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        button:hover {
+            background: #333333;
+        }
+
+
+        /* الفوتر */
+
+        .footer {
+            background: rgba(245, 241, 232, 0.96);
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            color: #333333;
+
+            font-size: 14px;
+
+            line-height: 2;border-top: 1px solid #ddd6c8;
+        }
+
+
+        .footer strong {
+            color: #111111;
+        }
+
+
+        /* الموبايل */
+
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+
+            .quote {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- رأس الموقع -->
+
+    <header class="header">
+
+        <div class="school-icon">
+            🎓
+        </div>
+
+        <h1>اتحاد الطلاب</h1>
+
+        <p>صوتك... خطوة نحو مدرسة أفضل</p>
+
+    </header>
+
+
+    <!-- الجملة الجميلة -->
+
+    <div class="quote">
+
+        «كل فكرة تستحق أن تُسمع، وكل مشكلة يمكن أن تكون بدايةً لحل،
+        وبالتعاون نصنع مدرسة أفضل للجميع.»
+
+    </div>
+
+
+    <!-- نموذج التواصل -->
+
+    <main class="container">
+
+        <div class="card">
+
+            <h2>تواصل مع اتحاد الطلاب</h2>
+
+            <p class="description">
+                شاركنا مشكلتك أو مقترحك،
+                وسنعمل على إيصال صوتك والاهتمام بما تقدمه.
+            </p>
+
+
+            <form action="/send" method="POST">
+
+
+                <div class="field">
+
+                    <label>الاسم الرباعي</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="اكتب اسمك الرباعي"
+                        required>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>الفصل / الشعبة</label>
+
+                    <input
+                        type="text"
+                        name="class_name"
+                        placeholder="مثال: 2 / 3"
+                        required>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>رقم الهاتف</label>
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="اكتب رقم الهاتف"
+                        required>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>المشكلة أو المقترح</label>
+
+                    <textarea
+                        name="problem"
+                        rows="7"
+                        placeholder="اكتب المشكلة أو المقترح بالتفصيل..."
+                        required></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    إرسال إلى اتحاد الطلاب
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- بيانات المسؤولين -->
+
+    <footer class="footer">
+
+        <div>
+            أمين الطلاب:
+            <strong>يامن ياسر</strong>
+        </div>
+
+        <div>
+            تحت إشراف مديرة المدرسة:
+            <strong>أ / ميرفت نعمان</strong>
+        </div>
+
+        <div>
+            معلمة تكنولوجيا المعلومات والاتصالات:
+            <strong>م / ريم آدم</strong>
+        </div>
+
+        <div>
+            أخصائية اجتماعية:
+            <strong>زينب عيد</strong>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
